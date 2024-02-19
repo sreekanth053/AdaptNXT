@@ -1,10 +1,52 @@
-import logo from './logo.svg';
 import './App.css';
+import Navbar from './components/Navbar/Navbar';
+import React from 'react';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import Orders from './pages/Orders';
+import Dashboard from './pages/Dashboard';
+import Shipping from './pages/Shipping';
+import Inventory from './pages/Inventory';
+import Channel from './pages/Channel';
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
+    <>
+    <Router>
+    <Navbar/>
+      <Routes>
+        <Route path='/dasboard' Component={Dashboard}/>
+        <Route path='/inventory' Component={Inventory}/>
+        <Route path='/' Component={Orders}/>
+        <Route path='/shipping' Component={Shipping}/>
+        <Route path='/channel' Component={Channel}/>
+      </Routes>
+    </Router>
+    </>
+  );
+}
+
+export default App;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*<header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
           Edit <code>src/App.js</code> and save to reload.
@@ -17,9 +59,4 @@ function App() {
         >
           Learn React
         </a>
-      </header>
-    </div>
-  );
-}
-
-export default App;
+</header>*/
