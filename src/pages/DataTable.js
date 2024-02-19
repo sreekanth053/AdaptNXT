@@ -1,12 +1,9 @@
 // DataTable.js
-import React, { useState } from 'react';
+import React from 'react';
 import './DataTable.css'; // Import the stylesheet
 import { TiArrowUnsorted } from "react-icons/ti";
 
-
 const DataTable = ({ data }) => {
-  const [tableData, setTableData] = useState(data);
-
   return (
     <table className="custom-table">
       <thead>
@@ -25,7 +22,7 @@ const DataTable = ({ data }) => {
         </tr>
       </thead>
       <tbody>
-        {tableData.map((row, index) => (
+        {data.map((row, index) => (
           <tr key={index}>
             <td>{row.column1}</td>
             <td>{row.column2}</td>
